@@ -1,0 +1,58 @@
+@panel-margin: var(--wesley-table-filter-form-margin, 16px);
+@panel-padding: var(--wesley-table-filter-form-padding, 24px);
+@panel-border-radius: var(--wesley-table-filter-form-border-radius, 5px);
+
+@table-margin: var(--wesley-table-margin, 16px);
+
+.wesley-table {
+  margin: @table-margin;
+  width: calc(100% - 2 * @table-margin);
+
+  &--no-margin {
+    margin: 0 0 @table-margin 0;
+  }
+
+  &-filter_form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: @panel-padding;
+    background-color: var(--td-bg-color-container);
+    margin: @panel-margin;
+
+    .t-form {
+      &__label {
+        width: fit-content !important;
+      }
+      &__controls {
+        margin-left: auto !important;
+      }
+    }
+
+    &-btn {
+      .t-button {
+        width: 110px;
+      }
+
+      &--left {
+        justify-content: flex-start;
+      }
+
+      &--center {
+        justify-content: center;
+      }
+
+      &--right {
+        justify-content: flex-end;
+      }
+    }
+
+    &--rounded-corner {
+      border-radius: @panel-border-radius;
+    }
+
+    &--no-margin {
+      margin: 0 0 @panel-margin 0;
+    }
+  }
+}

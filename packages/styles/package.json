@@ -1,0 +1,16 @@
+{
+  "name": "@wesley/styles",
+  "private": true,
+  "main": "index.ts",
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+    "raf": "^3.4.1"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "@types/raf": "^3.4.1"
+  },
+  "peerDependencies": {
+    "vue": ">=3.1.0"
+  }
+}

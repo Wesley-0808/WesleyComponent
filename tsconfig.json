@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "esnext",
+    "lib": [ "esnext", "dom"],
+    "jsx": "preserve",
+
+    /* Modules */
+    "module": "esnext",
+    "rootDir": ".",
+    "moduleResolution": "bundler",
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "types": ["@vue/runtime-dom", "node"],
+
+    /* JavaScript Support */
+    "allowJs": true,
+
+    /* Emit */
+    "declaration": true,  
+    "outDir": "lib",
+    "removeComments": true,
+
+    /* Interop Constraints */
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+
+    /* Type Checking */
+    // TODO: 待开启
+    // "strict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": false,
+
+    /* Completeness */
+    "skipLibCheck": true,
+
+    "paths": {
+      "@src/*": [ "packages/components/*" ]
+    }
+  },
+  "include": [
+    "./**/*.ts",
+    "./**/*.tsx",
+    "packages/components/**/*.vue",
+    "types/**/*.d.ts",
+    "./*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "lib",
+    "cjs",
+    "esm",
+    "es",
+  ]
+}

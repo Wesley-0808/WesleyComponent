@@ -1,0 +1,44 @@
+name: Publish
+
+on:
+  pull_request:
+    types: [closed]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  create-release:
+    if: github.event.pull_request.merged && github.event.pull_request && startsWith(github.head_ref, 'release/')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      # 设置 pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      # 设置 Node.js 环境，版本为 18
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - run: pnpm install --no-frozen-lockfile
+
+      - name: Update npm
+        run: npm install -g npm@latest
+
+      - name: Build
+        run: pnpm run build
+
+      - run: npm publish
+

@@ -1,0 +1,56 @@
+{
+  "name": "wesley-component",
+  "version": "0.0.1",
+  "author": "Wesley",
+  "license": "Apache-2.0",
+  "main": "cjs/index-lib.js",
+  "module": "es/index.mjs",
+  "typings": "es/index.d.ts",
+  "unpkg": "dist/tdesign.min.js",
+  "jsdelivr": "dist/tdesign.min.js",
+  "files": [
+    "es",
+    "esm",
+    "cjs",
+    "lib",
+    "dist",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "global.d.ts",
+    "helper"
+  ],
+  "scripts": {
+    "start": "pnpm run dev",
+    "dev": "vite --configLoader runner",
+    "build": "vite build --configLoader runner",
+    "preview": "vite build --mode preview --configLoader runner && cp dist/index.html dist/404.html"
+  },
+  "dependencies": {
+    "nprogress": "^0.2.0",
+    "semver": "^7.5.4",
+    "@tdesign/site-components": "0.18.0-alpha.1",
+    "vue": "^3.3.9",
+    "vue-router": "^4.2.4",
+    "tdesign-vue-next": "^1.17.1",
+    "workbox-precaching": "^6.6.0"
+  },
+  "devDependencies": {
+    "@types/nprogress": "^0.2.3",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitejs/plugin-vue-jsx": "^4.1.2",
+    "@vue/compiler-sfc": "^3.3.4",
+    "@vue/tsconfig": "^0.7.0",
+    "gray-matter": "^4.0.3",
+    "less": "^4.1.3",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.0",
+    "prismjs": "^1.29.0",
+    "vite-plugin-pwa": "^0.21.2",
+    "vite-plugin-tdoc": "^2.0.4",
+    "vue-tsc": "^2.2.4"
+  },
+  "peerDependencies": {
+    "vue": ">=3.1.0"
+  }
+}
