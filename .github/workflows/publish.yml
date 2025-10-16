@@ -8,6 +8,7 @@ on:
 permissions:
   id-token: write
   contents: read
+  pull-requests: read
 
 jobs:
   create-release:
@@ -15,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: read
 
     steps:
       - name: Checkout code
@@ -35,7 +35,7 @@ jobs:
       - run: pnpm install --no-frozen-lockfile
 
       - name: Update npm
-        run: npm install -g npm@10.8.0
+        run: npm install -g npm@latest
 
       - name: Build
         run: pnpm run build
