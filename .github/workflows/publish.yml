@@ -52,4 +52,5 @@ jobs:
             cd packages/site && npm publish --tag "${TAG_NAME%%.*}"
           else
             cd packages/site && npm publish
+          fi
 
