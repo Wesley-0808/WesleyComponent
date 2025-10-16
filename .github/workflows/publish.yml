@@ -38,5 +38,5 @@ jobs:
       - name: Build
         run: pnpm run build
 
-      - run: npm publish
+      - run: cd packages/site && npm publish
 
