@@ -14,8 +14,6 @@ jobs:
   create-release:
     if: github.event.pull_request.merged && github.event.pull_request && startsWith(github.head_ref, 'release/')
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
       - name: Checkout code
