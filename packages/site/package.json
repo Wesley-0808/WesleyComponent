@@ -1,6 +1,6 @@
 {
   "name": "wesley-component",
-  "version": "0.0.2-alpha.8",
+  "version": "0.0.2-alpha.9",
   "author": "Wesley",
   "license": "Apache-2.0",
   "main": "cjs/index-lib.js",
@@ -25,6 +25,10 @@
     "dev": "vite --configLoader runner",
     "build": "vite build --configLoader runner",
     "preview": "vite build --mode preview --configLoader runner && cp dist/index.html dist/404.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wesley-0808/WesleyComponent"
   },
   "dependencies": {
     "nprogress": "^0.2.0",
