@@ -25,15 +25,15 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
-      # 设置 Node.js 环境，版本为 18
+      # 设置 Node.js 环境，版本为 21
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 21
 
       - run: pnpm install --no-frozen-lockfile
 
       - name: Update npm
-        run: npm install -g npm@10.8.0
+        run: npm install -g npm@latest
 
       - name: Build
         run: pnpm run build
