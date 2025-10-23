@@ -1,4 +1,6 @@
-## 🌈 0.0.4 `2025-10-23` 
+## 🌈 0.1.0 `2025-10-23` 
+### 🚧 Others
+- fix: css build @Wesley-0808 ([#19](https://github.com/Wesley-0808/WesleyComponent/pull/19))## 🌈 0.0.4 `2025-10-23` 
 ### 🚧 Others
 - chore: release 0.0.2-alpha.2 @Wesley-0808 ([#5](https://github.com/Wesley-0808/WesleyComponent/pull/5))
 - Update publish.yml @Wesley-0808 ([#6](https://github.com/Wesley-0808/WesleyComponent/pull/6))
