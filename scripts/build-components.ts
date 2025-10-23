@@ -287,7 +287,7 @@ export const buildCjs = async () => {
 export const buildUmd = async (isMin = false) => {
   const bundle = await rollup({
     input,
-    external: [...externalPeerDeps, /@wesley\/styles/, /\.css$/],
+    external: [...externalPeerDeps, /tdesign-vue-next\/.*\/style/],
     plugins: isMin
       ? getPlugins({
           cssBuildType: 'single',
