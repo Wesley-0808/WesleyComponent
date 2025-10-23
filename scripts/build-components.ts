@@ -1,4 +1,5 @@
 import { glob } from 'glob';
+// @ts-ignore
 import fs from 'fs-extra';
 
 import { rollup, Plugin } from 'rollup';
@@ -19,6 +20,7 @@ import ignoreImport from 'rollup-plugin-ignore-import';
 import { terser } from 'rollup-plugin-terser';
 // @ts-ignore
 import multiInput from 'rollup-plugin-multi-input';
+// @ts-ignore
 import staticImport from 'rollup-plugin-static-import';
 import alias from '@rollup/plugin-alias';
 
@@ -59,11 +61,9 @@ const getPlugins = ({
   isProd?: boolean;
 } = {}) => {
   const plugins = [
-    alias({
-      entries: [
-        { find: '@wesley/styles', replacement: joinStylesRoot() }
-      ]
-    }),
+    // alias({
+    //   entries: [{ find: '@wesley/styles', replacement: joinStylesRoot() }],
+    // }),
     nodeResolve({
       extensions: ['.mjs', '.js', '.json', '.node', '.ts', '.tsx'],
     }) as unknown as Plugin,
@@ -212,7 +212,7 @@ export const buildEsm = async () => {
       copy({
         targets: [
           {
-            src: joinStylesRoot('/**/*.less'),
+            src: joinStylesRoot('tdesign-common-style/**/*.less'),
             dest: joinSiteRoot('esm/style'),
             rename: (_, __, fullPath) => `${fullPath.replace(joinStylesRoot(), '')}`,
           },
