@@ -22,7 +22,6 @@ import { terser } from 'rollup-plugin-terser';
 import multiInput from 'rollup-plugin-multi-input';
 // @ts-ignore
 import staticImport from 'rollup-plugin-static-import';
-import alias from '@rollup/plugin-alias';
 
 import pkg from '../packages/site/package.json';
 import { joinWorkspaceRoot, joinStylesRoot, joinComponentsRoot, joinSiteRoot } from './paths';
@@ -182,7 +181,7 @@ export const buildEs = async () => {
       input: [...inputList, `!${joinComponentsRoot('index-lib.ts')}`],
       // 为了保留 style/css.js
       treeshake: false,
-      external: esExternal,
+      external: [...esExternal, /@wesley\/styles/, /\.css$/],
       plugins: [multiInput({ relative: joinComponentsRoot() }), ...getPlugins({ cssBuildType: 'multi' })],
     });
     bundle.write({
@@ -253,7 +252,7 @@ export const buildEsm = async () => {
 export const buildLib = async () => {
   const bundle = await rollup({
     input: inputList,
-    external: [...externalDeps, ...externalPeerDeps],
+    external: [...externalDeps, ...externalPeerDeps, /@wesley\/styles/, /\.css$/],
     plugins: [multiInput({ relative: joinComponentsRoot() }), ...getPlugins({ cssBuildType: 'ignore' })],
   });
   await bundle.write({
@@ -272,7 +271,7 @@ export const buildCjs = async () => {
   );
   const bundle = await rollup({
     input: inputList,
-    external: cjsExternal,
+    external: [...cjsExternal, /@wesley\/styles/, /\.css$/],
     plugins: [multiInput({ relative: joinComponentsRoot() }), ...getPlugins({ cssBuildType: 'ignore' })],
   });
   await bundle.write({
@@ -288,7 +287,7 @@ export const buildCjs = async () => {
 export const buildUmd = async (isMin = false) => {
   const bundle = await rollup({
     input,
-    external: externalPeerDeps,
+    external: [...externalPeerDeps, /@wesley\/styles/, /\.css$/],
     plugins: isMin
       ? getPlugins({
           cssBuildType: 'single',

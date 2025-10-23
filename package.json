@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "pnpm -C packages/site dev",
     "build": "cross-env NODE_ENV=production tsx ./scripts/index.ts",
+    "site:build": "pnpm -C packages/site build",
     "tsc": "tsc -b",
     "preview": "vite preview --port 15700",
     "lint:fix": "eslint --ext .vue,.js,.ts,.tsx ./packages/components --max-warnings 0 --fix --cache",

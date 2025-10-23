@@ -12,6 +12,7 @@ esm/
 cjs/
 lib/
 dist/
+site-dist/
 
 # local env files
 .env.local
