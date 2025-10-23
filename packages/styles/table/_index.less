@@ -5,11 +5,9 @@
 @table-margin: var(--wesley-table-margin, 16px);
 
 .wesley-table {
-  margin: @table-margin;
-  width: calc(100% - 2 * @table-margin);
-
-  &--no-margin {
-    margin: 0 0 @table-margin 0;
+  &:not(.wesley-table--no-margin) {
+    margin: @table-margin;
+    width: calc(100% - 2 * @table-margin);
   }
 
   &-filter_form {

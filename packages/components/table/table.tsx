@@ -96,11 +96,6 @@ export default defineComponent({
       });
     };
 
-    const handlePageChange = (pageInfo: { current: number; pageSize: number }) => {
-      pagination.current = pageInfo.current;
-      pagination.pageSize = pageInfo.pageSize;
-    };
-
     const renderFilterForm = () => {
       const formItems: VNode[] = [];
 
@@ -170,7 +165,7 @@ export default defineComponent({
         <>
           {renderFilterForm()}
           <Table
-            class={[componentName, { [componentName + '-filter--no-margin']: !props.needMargin }]}
+            class={[componentName, { [componentName + '--no-margin']: !props.needMargin }]}
             columns={columns.value}
             data={tableData.value}
             pagination={pagination}
