@@ -52,7 +52,8 @@
     "prismjs": "^1.29.0",
     "vite-plugin-pwa": "^0.21.2",
     "vite-plugin-tdoc": "^2.0.4",
-    "vue-tsc": "^2.2.4"
+    "vue-tsc": "^2.2.4",
+    "lodash-es": "^4.17.21"
   },
   "peerDependencies": {
     "vue": ">=3.1.0"
