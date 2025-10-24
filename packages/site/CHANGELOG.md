@@ -1,4 +1,8 @@
-## 🌈 0.1.0 `2025-10-23` 
+## 🌈 0.1.1 `2025-10-24` 
+### 🚀 Features
+- `table`: 新增 `useSlot` API @Wesley-0808 ([#21](https://github.com/Wesley-0808/WesleyComponent/pull/21))
+### 🐞 Bug Fixes
+- `table`: 修复table在无margin模式下异常的问题 @Wesley-0808 ([#21](https://github.com/Wesley-0808/WesleyComponent/pull/21))## 🌈 0.1.0 `2025-10-23` 
 ### 🚧 Others
 - fix: css build @Wesley-0808 ([#19](https://github.com/Wesley-0808/WesleyComponent/pull/19))## 🌈 0.0.4 `2025-10-23` 
 ### 🚧 Others
