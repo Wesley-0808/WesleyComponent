@@ -96,11 +96,6 @@ export default defineComponent({
       });
     };
 
-    const handlePageChange = (pageInfo: { current: number; pageSize: number }) => {
-      pagination.current = pageInfo.current;
-      pagination.pageSize = pageInfo.pageSize;
-    };
-
     const renderFilterForm = () => {
       const formItems: VNode[] = [];
 
@@ -135,6 +130,7 @@ export default defineComponent({
       return (
         <div
           class={[componentName + `-filter_form`, { [componentName + '-filter_form--no-margin']: !props.needMargin }]}
+          {...(props.useSlot ? { slot: 'filter-form' } : {})}
         >
           <Form layout="inline" labelAlign="left">
             <Space>{formItems}</Space>
@@ -170,7 +166,7 @@ export default defineComponent({
         <>
           {renderFilterForm()}
           <Table
-            class={[componentName, { [componentName + '-filter--no-margin']: !props.needMargin }]}
+            class={[componentName, { [componentName + '--no-margin']: !props.needMargin }]}
             columns={columns.value}
             data={tableData.value}
             pagination={pagination}

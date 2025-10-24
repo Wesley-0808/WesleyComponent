@@ -38,6 +38,10 @@ export default {
   tableProps: {
     type: Object as PropType<WesleyTableProps['tableProps']>,
   },
+  useSlot: {
+    type: Boolean,
+    default: false,
+  },
   // 点击查询回调
   onFilter: Function as PropType<WesleyTableProps['onFilter']>,
 };
