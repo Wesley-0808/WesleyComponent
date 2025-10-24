@@ -130,6 +130,7 @@ export default defineComponent({
       return (
         <div
           class={[componentName + `-filter_form`, { [componentName + '-filter_form--no-margin']: !props.needMargin }]}
+          {...(props.useSlot ? { slot: 'filter-form' } : {})}
         >
           <Form layout="inline" labelAlign="left">
             <Space>{formItems}</Space>

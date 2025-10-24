@@ -29,6 +29,8 @@ export interface WesleyTableProps<T extends TableRowData = TableRowData> {
   btnAlign: FilterFormBtnAlign;
   // 透传td表格
   tableProps: TableProps;
+  // useSlot
+  useSlot: boolean;
   // 点击查询回调
   onFilter: (filters: any) => WesleyTableProps<T>['data'];
 }
